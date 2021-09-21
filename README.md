@@ -43,6 +43,12 @@ WHERE FUNCTION(COL) <OPERATOR> <VALUE>
 SELECT COL || COL // concatenate
 ```
 
+```
+DATE("now")
+
+
+```
+
 # WHERE _ AND , OR 
 
 select < > from < > where column <operator> <value> AND|OR column <operator> <value>
