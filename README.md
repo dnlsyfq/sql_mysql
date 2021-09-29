@@ -53,6 +53,15 @@ DATE(YYYY-MM-DD,"+1 MONTH","-1 DAY")
 
 
 SELECT * FROM orders WHERE DATE("2021-09-24","-7 DAYS") ORDER BY ordered_on DESC;
+SELECT COUNT(*) FROM orders WHERE ordered_on BETWEEN DATE("now","-7 days") AND DATE("now","-1 day");
+SELECT COUNT(*) FROM orders WHERE ordered_on = DATE("now","-1 day")
+
+
+DATE("DATETIME STRING")
+TIME("DATETIME STRING")
+
+STRFTIME(<format string>, "2015-04-01 23:12:01",<modifier>)
+STRFTIME("%d/%m/%Y","2015-04-01 23:12:01",<modifier>)
 
 ```
 
