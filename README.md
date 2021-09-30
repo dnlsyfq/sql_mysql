@@ -74,3 +74,11 @@ select < > from < > where column <operator> <value> AND|OR column <operator> <va
 select < > from < > where column IN (value,value,value)  
 
 select < > from < > where column NOT IN (value,value,value)  
+
+# Database Normalization
+
+* process of eliminating redundant or repeating data in a database
+* reduce disk storage
+* enforcement data integrity
+  
+  
