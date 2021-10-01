@@ -81,4 +81,18 @@ select < > from < > where column NOT IN (value,value,value)
 * reduce disk storage
 * enforcement data integrity
   
+# UNION
+  stack vertically ,
+  same no. of columns
+  return distinct records
+ ```
+  SELECT * FROM table UNION SELECT * FROM table
+  
+  
+SELECT MakeID, MakeName FROM Make WHERE MakeName < "D"
+UNION 
+SELECT ForeignMakeID, MakeName FROM ForeignMake WHERE MakeName < "D"
+ORDER BY MakeName ; 
+  ```
+  
   
