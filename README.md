@@ -93,6 +93,41 @@ SELECT MakeID, MakeName FROM Make WHERE MakeName < "D"
 UNION 
 SELECT ForeignMakeID, MakeName FROM ForeignMake WHERE MakeName < "D"
 ORDER BY MakeName ; 
+  
+  
+  select Name from Fruit where Name between 'A%' and 'L%' union select Name from Vegetable where Name between 'A%' and 'L%';
   ```
+  
+  # UNION ALL
+  
+allow duplicates
+
+  ```
+  SELECT MakeID, MakeName FROM Make WHERE MakeName < "D"
+UNION ALL
+SELECT ForeignMakeID, MakeName FROM ForeignMake WHERE MakeName < "D"
+ORDER BY MakeName ; 
+  
+  ```
+  
+  # Intersect
+  * INTERSECT is similar to an Inner Join. As with a UNION, they must have the same columns in both the left and right side of the SQL operation
+  * only going to return the rows that exist in both 
+  * return that exist in both table
+
+  ```
+  
+SELECT MakeName FROM Make INTERSECT SELECT MakeName FROM ForeignMake;
+  ```
+  # Except 
+  * EXCEPT uses the same format as INTERSECT, but outputs only the records that are not in the latter table.
+  * except the rows that are match in second query
+  * except gives you only the records that arent in both tables
+  ```
+SELECT MakeName
+FROM ForeignMake EXCEPT
+SELECT MakeName FROM Make;
+  ```
+  
   
   
