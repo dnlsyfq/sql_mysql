@@ -129,5 +129,18 @@ FROM ForeignMake EXCEPT
 SELECT MakeName FROM Make;
   ```
   
+### SUBQUERIES
+  
+```
+SELECT col
+FROM table1
+WHERE col1 IN (
+    SELECT col1
+    FROM table2
+    WHERE col3
+  )
+```
+  
+  
   
   
