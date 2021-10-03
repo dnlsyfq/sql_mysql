@@ -141,6 +141,42 @@ WHERE col1 IN (
   )
 ```
   
+```
+ SELECT <COL>
+ FROM TABLE1
+ <INNER | OUTER> JOIN
+ (SELECT <COL> FROM <TABLE> WHERE <STATEMENT>) AS TABLE2
+  ON TABLE1.id = TABLE2.id
+```
+
+```
+SELECT * FROM Sale WHERE CarID IN (
+  SELECT CarID
+  FROM Car
+  WHERE ModelYear = '2015'
+);  
+```
   
+```
   
+SELECT * FROM Sale s
+  INNER JOIN ( SELECT CarID, ModelYear From Car WHERE ModelYear = 2015) t
+  ON s.CarID =t.CarID;
+```
+```
+SELECT sr.LastName, Loc1.StLouisAmount, Loc2.ColumbiaAmount
+FROM SalesRep sr
+LEFT OUTER JOIN (
+    SELECT SalesRepID, SUM(SaleAmount) StLouisAmount
+    FROM Sale s
+    WHERE s.LocationID = 1
+    GROUP BY SalesRepID
+  ) Loc1 ON sr.SalesRepID = Loc1.SalesRepID
+LEFT OUTER JOIN (
+    SELECT SalesRepID, SUM(SaleAmount) ColumbiaAmount
+    FROM Sale s
+  WHERE s.LocationID = 2
+  GROUP BY SalesRepID
+  ) Loc2 ON sr.SalesRepID = Loc2.SalesRepID;   
+```
   
