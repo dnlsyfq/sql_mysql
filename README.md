@@ -32,6 +32,45 @@ UPDATE <TABLE> SET <COLUMN> = VAL WHERE <CONDITION>
   * <COLUMN> LIKE <PATTERN>;
 ```
 
+* Entire table
+```
+DELETE FROM <TABLE>;
+```
+
+* Specific rows
+```
+DELETE TABLE <TABLE> WHERE <CONDITION>
+```
+
+### Transactions
+seeding or populating a database for the first time
+```
+BEGIN TRANSACTION
+ INSERT INTO ...
+ INSERT INTO ...
+ ISNERT INTO ...
+
+COMMIT
+```
+
+```
+BEGIN 
+ INSERT INTO ...
+ INSERT INTO ...
+ ISNERT INTO ...
+
+COMMIT
+```
+
+```
+BEGIN 
+ INSERT INTO ...
+ INSERT INTO ...
+ ISNERT INTO ...
+
+ROLLBACK
+```
+
 ```
 WHERE COL LIKE VALUE
 WHERE LOWER(COL) = VALUE 
