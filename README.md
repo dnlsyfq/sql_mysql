@@ -44,6 +44,9 @@ DELETE TABLE <TABLE> WHERE <CONDITION>
 
 ### Transactions
 seeding or populating a database for the first time
+* BEGIN | BEGIN TRANSACTION turns autocommit off
+* COMMIT turns autocommit on 
+
 ```
 BEGIN TRANSACTION
  INSERT INTO ...
@@ -61,7 +64,7 @@ BEGIN
 
 COMMIT
 ```
-
+* rollback changes
 ```
 BEGIN 
  INSERT INTO ...
@@ -70,6 +73,14 @@ BEGIN
 
 ROLLBACK
 ```
+### ORM (OBJECT RELATIONAL MAPPING)
+perform crud operations with a language other than sql 
+* handle transactions
+* example
+ *   hibernate - java
+ *   coredata - objective c
+ *   django arm - python
+ *   activerecord - ruby
 
 ```
 WHERE COL LIKE VALUE
