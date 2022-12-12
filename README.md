@@ -1,3 +1,14 @@
+```
+show databases
+show tables
+show columns from <table name>
+```
+
+```
+// pick up four records, starting from the third position
+SELECT * FROM table OFFSET 3 LIMIT 4
+SELECT * FROM table LIMIT 3,4
+```
 
 
 ```
